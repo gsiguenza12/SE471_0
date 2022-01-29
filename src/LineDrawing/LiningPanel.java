@@ -11,7 +11,7 @@ import java.util.Random;
 public class LiningPanel extends javax.swing.JPanel {
 
 
-    public LiningPanel() { }
+    LiningPanel() { }
 
     public void paintComponent(Graphics g)
     {
