@@ -1,6 +1,9 @@
 /******
- *
- *
+ * Lab 0 Lining panel gui class to implement java awt
+ * used for SE 471 lab 0, with Dr. Simon Fan
+ * @author Gabriel Siguenza
+ * <sigue005@cougars.csusm>
+ * @author Uma Nair
  */
 package LineDrawing;
 
