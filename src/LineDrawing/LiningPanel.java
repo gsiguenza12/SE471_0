@@ -11,24 +11,31 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
-public class LiningPanel extends javax.swing.JPanel {
+public class LiningPanel extends javax.swing.JPanel implements Runnable{
 
+    LiningPanel() { } // Empty constructor? Can't remember why we do it this way.
 
-    LiningPanel() { }
+    private boolean programHalted = false;
+
+    private synchronized boolean resumeProgram(){
+        return !this.programHalted; //shortcode to set boolean to false
+    }
+
+    public synchronized void haltProgram(){
+        this.programHalted = true;
+    }
 
     public void paintComponent(Graphics g) {
 
-
         //**RGB components(values are in range 0 – 255)
-
         super.paintComponent(g);
         int w = getWidth();
         int h = getHeight();
 
-        double lines = 15.0; // ** how spread out the lines are?
+        double lines = 15.0; // ** how spread out the lines are? NO.
 
-        // Draw line design on bottom left portion of the screen
-        for (int i = 0; i < lines; i++) // ** this for loop draws the graph design in the bottom left portion
+        // Draw the lines
+        for (int i = 0; i < lines; i++)
         {
             int w2 = (int) ((i / lines) * w);
             int h2 = (int) ((i / lines) * h);
@@ -41,7 +48,11 @@ public class LiningPanel extends javax.swing.JPanel {
         }
       }
 
-        protected void generateRGB(Graphics g){
+    /**
+     * Takes in Graphics object and sets the color using RGB values.
+     * @param g the Graphics object that the color will be applied to.
+     */
+    protected void generateRGB(Graphics g){
             Random randNum = new Random();
             int red, green, blue;
             red = randNum.nextInt(256);
@@ -51,4 +62,18 @@ public class LiningPanel extends javax.swing.JPanel {
             g.setColor(new Color(red, green, blue));
     }
 
+    // TODO: Implement the Runnable interface
+    @Override
+    public void run() {
+        while(!programHalted){ // while flag to pause is not set to true.
+            // pretend to do stuff until I figure this out.
+            System.out.println("Doing stuff...");
+            try{
+                Thread.sleep(50000); // for some amount of time.
+                // Professor put this (3L * 1000L) as the sleep time, wtf is this?
+            } catch (InterruptedException e){
+                e.printStackTrace(); // Using java.lang.thread - can throw exceptions so we must handle them when using it.
+            }
+        }
+    }
 }
