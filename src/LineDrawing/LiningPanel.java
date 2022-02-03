@@ -1,24 +1,25 @@
 /******
  * Lab 0 Lining panel gui class to implement java awt
  * used for SE 471 lab 0, with Dr. Simon Fan
+ *
  * @author Gabriel Siguenza
  * <sigue005@cougars.csusm>
  * @author Uma Nair
- */
-package LineDrawing;
+ **/
 
+package LineDrawing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
 public class LiningPanel extends javax.swing.JPanel implements Runnable{
 
-    LiningPanel() { } // Empty constructor? Can't remember why we do it this way.
+    LiningPanel() {} // Empty constructor? Can't remember why we do it this way.
 
     private boolean programHalted = false;
 
     private synchronized boolean resumeProgram(){
-        return !this.programHalted; //shortcode to set boolean to false
+        return !this.programHalted; //short code to set boolean to false
     }
 
     public synchronized void haltProgram(){
