@@ -6,7 +6,8 @@
  * <sigue005@cougars.csusm>
  * @author Uma Nair
  *
- * Note: This file is not used in the program yet.
+ * Notes: This file is not used in the program yet.
+ *  ** All calls to Swing objects must be made on the event-dispatching thread.
  **/
 package LineDrawing;
 
@@ -18,14 +19,28 @@ import java.util.LinkedList; // **CHANGE
 
 class CommandPanel extends JPanel  {
 
+
+    // make JButton here?
+    JPanel buttonPanel;
+    JButton theOnlyButton; // How to dynamically update the text?
+
+
     private static final long serialVersionUID = 1L;
     private static final int FONT_SIZE = 14;
 
-//    private final JTextField commandField =  new JTextField(); // this takes commands as input into a text field
     private final LinkedList<String> commandBuffer  = new LinkedList<>(); // using linked list as a queue to hold commands(commandBuffer).
 
-    // TODO: Add JButton!
+
     CommandPanel() {
+        buttonPanel = new JPanel();
+        theOnlyButton = new JButton();
+        buttonPanel.add(theOnlyButton);
+
+        theOnlyButton.setText("Draw");
+
+        this.add(theOnlyButton);
+        this.add(buttonPanel);
+
         class AddActionListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
 //                synchronized(commandBuffer) {
@@ -38,11 +53,6 @@ class CommandPanel extends JPanel  {
 
         ActionListener listener = new AddActionListener();
 
-        // **Fancy extra stuff and not using JtextField
-//        commandField.addActionListener(listener);
-//        commandField.setFont(new Font("Times New Roman", Font.PLAIN, FONT_SIZE));
-//        setLayout(new BorderLayout());
-//        add(commandField, BorderLayout.CENTER);
     }
 
     /**

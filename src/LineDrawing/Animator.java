@@ -6,7 +6,7 @@
  * <sigue005@cougars.csusm>
  * @author Uma Nair
  *
- * Note: ** indicates unecessary comments to be deleted... including this one **
+ * Notes: ** indicates unecessary comments to be deleted... including this one **
  **/
 package LineDrawing;
 
@@ -29,6 +29,7 @@ public class Animator implements Runnable {
                 d.repaint(); // **calling repaint method from Java component to redraw our Graphics object
                 d.increaseCounter();
             }
+
             try{
                 Thread.sleep(300);
             }catch(Exception e){}

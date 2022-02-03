@@ -6,7 +6,7 @@
  * <sigue005@cougars.csusm>
  * @author Uma Nair
  *
- * Note: ** indicates unecessary comments to be deleted... including this one **
+ * Notes: ** indicates unecessary comments to be deleted... including this one **
  **/
 
 package LineDrawing;
@@ -43,7 +43,8 @@ public class LiningPanel extends javax.swing.JPanel implements Runnable{
             int w2 = (int) ((i / lines) * w);
             int h2 = (int) ((i / lines) * h);
 
-            generateRGB(g);
+            generateRGB(g); // randomize the line colors
+
             g.drawLine(0, h2, w2, h); // 0 and h determine the geometry of the lines, use to reorient
             g.drawLine(w2, h, w, h - h2);
             g.drawLine(w, h2, w2, 0);
@@ -66,7 +67,6 @@ public class LiningPanel extends javax.swing.JPanel implements Runnable{
             g.setColor(new Color(red, green, blue));
     }
 
-    // TODO: Implement the Runnable interface
     @Override
     public void run() {
         while(!programHalted){ // while flag to pause is not set to true.
