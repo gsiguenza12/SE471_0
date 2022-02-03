@@ -5,6 +5,8 @@
  * @author Gabriel Siguenza
  * <sigue005@cougars.csusm>
  * @author Uma Nair
+ *
+ * Note: ** indicates unecessary comments to be deleted... including this one **
  **/
 
 package LineDrawing;
@@ -14,12 +16,12 @@ import java.util.Random;
 
 public class LiningPanel extends javax.swing.JPanel implements Runnable{
 
-    LiningPanel() {} // Empty constructor? Can't remember why we do it this way.
+    LiningPanel() {} // **Empty constructor? Can't remember why we do it this way.
 
     private boolean programHalted = false;
 
     private synchronized boolean resumeProgram(){
-        return !this.programHalted; //short code to set boolean to false
+        return !this.programHalted; //**short code to set boolean to false
     }
 
     public synchronized void haltProgram(){
@@ -33,7 +35,7 @@ public class LiningPanel extends javax.swing.JPanel implements Runnable{
         int w = getWidth();
         int h = getHeight();
 
-        double lines = 15.0; // ** how spread out the lines are? NO.
+        double lines = 15.0; // **how spread out the lines are? NO.
 
         // Draw the lines
         for (int i = 0; i < lines; i++)
@@ -47,7 +49,8 @@ public class LiningPanel extends javax.swing.JPanel implements Runnable{
             g.drawLine(w, h2, w2, 0);
             g.drawLine(w2, 0, 0, h - h2);
         }
-      }
+    }
+
 
     /**
      * Takes in Graphics object and sets the color using RGB values.
@@ -67,14 +70,21 @@ public class LiningPanel extends javax.swing.JPanel implements Runnable{
     @Override
     public void run() {
         while(!programHalted){ // while flag to pause is not set to true.
-            // pretend to do stuff until I figure this out.
+            // **pretend to do stuff until I figure this out.
             System.out.println("Doing stuff...");
             try{
                 Thread.sleep(50000); // for some amount of time.
-                // Professor put this (3L * 1000L) as the sleep time, wtf is this?
+                // **Professor put this (3L * 1000L) as the sleep time, wtf is this?
             } catch (InterruptedException e){
-                e.printStackTrace(); // Using java.lang.thread - can throw exceptions so we must handle them when using it.
+                e.printStackTrace(); // **Using java.lang.thread - can throw exceptions so we must handle them when using it.
             }
         }
+    }
+
+    /**
+     * package protected method that increases the LiningPanel counter.
+     */
+    protected void increaseCounter() {
+        // counter ++ //I'm assuming?
     }
 }
