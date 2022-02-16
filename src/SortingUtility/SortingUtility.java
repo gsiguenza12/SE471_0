@@ -1,6 +1,6 @@
-/**
+package SortingUtility; /**
  * ABC Company Sorting Utility class. Utility class for useful Java methods.
- * Used to implement bubblesort and quicksort on the ProductList.java class.
+ * Used to implement bubblesort and quicksort on the SortingUtility.ProductList.java class.
  *
  * @author Gabriel Alfredo Siguenza <sigue005@cougars.csusm.edu>
  * @author
@@ -124,7 +124,7 @@ public class SortingUtility {
     }
 
 
-    /**** @@USEFUL JAVA METHODS ****/
+    /****************************** @@EXTRA USEFUL JAVA METHODS ******************************/
     /**
      * Centers and prints text value within total width (like width in printf) given for one line,
      * ends with new line (uses getCentered method)

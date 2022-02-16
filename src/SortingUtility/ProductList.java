@@ -1,5 +1,5 @@
-/**
- * ABC Company ProductList class. Has at least 3 attributes.
+package SortingUtility; /**
+ * ABC Company SortingUtility.ProductList class. Has at least 3 attributes.
  *
  * @author Gabriel Alfredo Siguenza <sigue005@cougars.csusm.edu>
  * @author
@@ -8,42 +8,45 @@
  * @@ - indicates comment to be deleted.
  * TODO: ADD YOUR INFORMATION TO AUTHOR LIST
  */
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+
+import java.util.*;
+
 
 public class ProductList<Product> implements List<Product> {
 
-    private List<Product> productList;
+    private ArrayList<Product> items;
 
 
     public ProductList(List<Product> productList) {
-        this.productList = productList;
+        this.items = (ArrayList<Product>) productList;
     }
 
+    public ProductList() {
+        items = new ArrayList<Product>();
+    }
 
 
     /****** @@Do we want public getters and setters for our product list? ******/
 
 
     public List<Product> getProductList() {
-        return productList;
+        return items;
     }
 
     public void setProductList(List<Product> productList) {
-        this.productList = productList;
+        this.items = (ArrayList<Product>) productList;
     }
+
 
     /***** OVERRIDDEN METHODS FOR INTERFACE LIST *****/
     @Override
     public int size() {
-        return 0;
+        return items.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return items.isEmpty();
     }
 
     @Override
@@ -66,8 +69,10 @@ public class ProductList<Product> implements List<Product> {
         return null;
     }
 
-    @Override
+
     public boolean add(Product product) {
+//        items.add(new SortingUtility.Product(product.getName(),product.getID(),product.getPrice()));
+
         return false;
     }
 
