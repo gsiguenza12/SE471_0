@@ -28,5 +28,8 @@ public class SortingUtilityDriver {
 
         ProductList items = new ProductList();
 
+        items.add(hammer);
+
+
     }
 }

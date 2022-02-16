@@ -58,32 +58,3 @@ public class Product {
     }
 }
 
-// helper class
-class SortByID implements Comparator<Product> {
-
-    @Override
-    public int compare(Product o1, Product o2) {
-        return o1.getID().compareTo(o2.getID());
-    }
-}
-
-class SortByName implements Comparator<Product> {
-
-    @Override
-    public int compare(Product o1, Product o2) {
-        return o1.getName().compareTo(o2.getName());
-    }
-}
-
-class SortByPrice implements Comparator<Product> {
-
-    @Override
-    public int compare(Product o1, Product o2) {
-        double difference = o1.getPrice() - o2.getPrice();
-        if(difference > 0.0001){return 1;}
-        return -1;  // else difference is less than, return -1;
-    }
-//    Since Java 8 you can also use this:
-//    Comparator<someClass> cp = (a, b) ->  Double.compare(a.getScore(), b.getScore());
-//    Comparator<someClass> cp = Comparator.comparing(someClass::getScore);
-}

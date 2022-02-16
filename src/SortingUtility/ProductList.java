@@ -1,4 +1,6 @@
-package SortingUtility; /**
+package SortingUtility;
+
+/**
  * ABC Company SortingUtility.ProductList class. Has at least 3 attributes.
  *
  * @author Gabriel Alfredo Siguenza <sigue005@cougars.csusm.edu>
@@ -15,7 +17,7 @@ import java.util.*;
 public class ProductList<Product> implements List<Product> {
 
     private ArrayList<Product> items;
-
+    private Product temp;
 
     public ProductList(List<Product> productList) {
         this.items = (ArrayList<Product>) productList;
@@ -70,8 +72,21 @@ public class ProductList<Product> implements List<Product> {
     }
 
 
+    /**
+     * TODO: Test this method.
+     * @param product
+     * @return
+     */
     public boolean add(Product product) {
-//        items.add(new SortingUtility.Product(product.getName(),product.getID(),product.getPrice()));
+        // cannot access Product members directly. must use getClass().methodCall()
+        if(product != null) {
+            items.add(product);
+        }
+        else{
+            System.out.println("invalid Product passed in parameter!");
+            System.exit(0);
+        }
+
 
         return false;
     }
