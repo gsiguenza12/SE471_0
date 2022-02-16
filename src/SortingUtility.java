@@ -12,6 +12,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class SortingUtility {
     private static Scanner keyboard = new Scanner(System.in); //used by all methods, MUST be kept clean
     private static final int SCREEN_HEIGHT = 50;
@@ -118,6 +120,8 @@ public class SortingUtility {
         return items; //stub
     }
 
+
+    /**** @@USEFUL JAVA METHODS ****/
     /**
      * Centers and prints text value within total width (like width in printf) given for one line,
      * ends with new line (uses getCentered method)
@@ -278,6 +282,34 @@ public class SortingUtility {
         return result;
     }
 
+    /**
+     * Reads double does not use scanner, or require prompt, acts as gatekeeper for BAD DATA.
+     * @param lower lower bound for double
+     * @param upper upper bound for double
+     * @return the checked double value
+     */
+    public static double readDouble(double temp,double lower, double upper){
+        double result = temp;
+        boolean isNotValid;
+
+        try
+        {
+            isNotValid = (result < lower) || (result > upper);
+
+            if(isNotValid)
+            {
+                System.out.println("ERROR: trying to set double not within bounds!\nreport bounds: " + lower + " - " + upper);
+                exit(0); // safely terminating program
+            }
+        }
+        catch(NumberFormatException nfe)
+        {
+            System.out.println("ERROR: double within bounds is required");
+            exit(0); // safely terminating program
+        }
+        return result;
+    }
+
 
     /**
      * Reads input from user until valid char value entered (error-checked using validChars)
@@ -371,7 +403,7 @@ public class SortingUtility {
         {
             System.err.println("Sleeping of thread interrupted, critical error, shutting down");
             System.err.println(ie.getStackTrace());
-            System.exit(0);
+            exit(0);
         }
     }
 
@@ -439,5 +471,5 @@ public class SortingUtility {
     }
 
     // Java Encoded String Passwords: https://howtodoinjava.com/security/how-to-generate-secure-password-hash-md5-sha-pbkdf2-bcrypt-examples/
-
+    /**** @@ END OF USEFUL JAVA METHODS ****/
 }
