@@ -9,11 +9,114 @@
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Scanner;
 
 public class SortingUtility {
     private static Scanner keyboard = new Scanner(System.in); //used by all methods, MUST be kept clean
     private static final int SCREEN_HEIGHT = 50;
+
+    /**
+     * private class method bubbleSort called by public sort method
+     */
+    private void bubbleSort(){
+
+    }
+
+    /***** @@NOTES QUICK SORT CLASS IMPLEMENTATION*****/
+    /*
+    For the extra credit assignment in Chapter 12, #8 (QuickSort), the split point formula they gave in the book is wrong.
+    Here is the correct formula.
+        splitPoint = (a[begin] + a[end] + a[size/2]) / 3
+    */
+
+       /* public class QuickSort
+        {
+            // QUICKSORT Display 12.8 (pp.701)
+
+            public static void sort(double[] a, int begin, int end)
+            {
+                if((end - begin) >= 1)
+                {
+                    int splitPoint = split(a, begin, end);
+                    sort(a, begin, splitPoint);
+                    sort(a, splitPoint + 1, end);
+                    join(a,begin, splitPoint, end);
+                }// else sorting one (or fewer) elements so do nothing.
+
+            }
+
+            public static int split(double[] a, int begin, int end)
+            {
+                double[] temp;
+                int size = (end - begin + 1);
+
+                temp = new double[size];
+
+                double splitValue = a[begin];
+
+                int up = 0;
+                int down = size -1;
+
+                // Note that a[begin] = splitValue is skipped.
+
+                for ( int i = begin + 1; i <= end; i++)
+                {
+                    if (a[i] <= splitValue)
+                    {
+                        temp[up] = a[i];
+                        up++;
+                    }
+                    else
+                    {
+                        temp[down] = a[i];
+                        down--;
+                    }
+                }
+
+                // 0 < up = down < size
+
+                temp[up] = a[begin]; // positions the split value
+
+                //temp[i] <= splitValue for i < up
+                // temp[up] = splitValue
+                // temp[i] > splitValue for i > up
+
+                for(int i = 0; i < size; i++)
+                {
+                    a[begin + i] = temp[i];
+                }
+                return (begin + up);
+            }
+
+            private static void join(double[] a, int begin, int splitPoint, int end)
+            {
+                // do nothing.
+            }
+
+
+    }*/
+
+
+    /**
+     * private class method quickSort called by public sort method
+     */
+    private void quickSort(){
+
+    }
+
+    /**
+     * Sorting Utility method to sort list of products either by quick sort method or bubble sort method.
+     *
+     * @param items the product list containing the items(Products) to be sorted.
+     * @param sortingApproach an integer (1 or 2) indicating sorting method (1. quickSort, 2. bubbleSort)
+     * @return returns a list of sorted products to the client.
+     */
+    public List<Product> sort(List<Product> items, int sortingApproach){
+
+
+        return items; //stub
+    }
 
     /**
      * Centers and prints text value within total width (like width in printf) given for one line,

@@ -4,16 +4,34 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * implement from superclass?, import ArrayList?, Generics?
+ * @@ - indicates comment to be deleted.
+ *
+ * @@implement from superclass?, import ArrayList?, Generics?
  */
+
 public class ProductList<Product> implements List<Product> {
 
-    List<Product> sort(List<Product> items, int sortingApproach){
+    private List<Product> productList;
 
 
-        return items; //stub
+    public ProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
+
+
+    /****** @@Do we want public getters and setters for our product list? ******/
+
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    /***** OVERRIDDEN METHODS FOR INTERFACE LIST *****/
     @Override
     public int size() {
         return 0;
@@ -128,4 +146,6 @@ public class ProductList<Product> implements List<Product> {
     public List<Product> subList(int fromIndex, int toIndex) {
         return null;
     }
+    /***** END OF OVERRIDDEN METHODS FOR INTERFACE LIST *****/
+
 }
