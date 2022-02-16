@@ -1,13 +1,17 @@
+/**
+ * ABC Company ProductList class. Has at least 3 attributes.
+ *
+ * @author Gabriel Alfredo Siguenza <sigue005@cougars.csusm.edu>
+ * @author
+ * @author
+ *
+ * @@ - indicates comment to be deleted.
+ * TODO: ADD YOUR INFORMATION TO AUTHOR LIST
+ */
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
-/**
- * @@ - indicates comment to be deleted.
- *
- * @@implement from superclass?, import ArrayList?, Generics?
- */
 
 public class ProductList<Product> implements List<Product> {
 

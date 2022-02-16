@@ -3,7 +3,10 @@
  *
  * @author Gabriel Alfredo Siguenza <sigue005@cougars.csusm.edu>
  * @author
- * @author*
+ * @author
+ *
+ * @@ - indicates comment to be deleted.
+ * TODO: ADD YOUR INFORMATION TO AUTHOR LIST
  */
 public class Product {
     private String ID;
