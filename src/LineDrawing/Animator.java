@@ -12,10 +12,10 @@ package LineDrawing;
 
 public class Animator implements Runnable {
 
-    private LiningPanel d; // Create a Lining panel object
+    private AnimatedLiningPanel d; // Create a Lining panel object
     private boolean animStopped = false; // set flag for run status
 
-    public Animator(LiningPanel a){d = a;} //** explanation: Constructor for Animator
+    public Animator(AnimatedLiningPanel a){d = a;} //** explanation: Constructor for Animator
     // takes a Graphics object and references it.
 
 
@@ -36,7 +36,7 @@ public class Animator implements Runnable {
         }
     }
 
-    public void setD(LiningPanel dNew){
+    public void setD(AnimatedLiningPanel dNew){
         this.d = dNew;
     }
 

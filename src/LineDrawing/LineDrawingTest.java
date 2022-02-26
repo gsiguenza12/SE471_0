@@ -18,7 +18,6 @@
 package LineDrawing;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class LineDrawingTest {
 
@@ -26,7 +25,7 @@ public class LineDrawingTest {
 
         // components needed for displaying line drawing application
         JFrame application = new JFrame();
-        LiningPanel panel = new LiningPanel();
+        AnimatedLiningPanel panel = new AnimatedLiningPanel();
 
         // setting up the application applet view.
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

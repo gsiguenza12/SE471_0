@@ -43,7 +43,11 @@ class CommandPanel extends JPanel  {
 
         class AddActionListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-
+//                synchronized(commandBuffer) {
+//                    commandBuffer.add(commandField.getText());
+//                    commandField.setText("");
+//                    commandBuffer.notify();
+//                }
             }
         }
 
